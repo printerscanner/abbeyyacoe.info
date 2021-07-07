@@ -16,17 +16,14 @@
 			color: black;
 		}
 		.content {
-  			min-height: calc(100vh - 150px);
-		}
-		.footer {
-  			height: 100px;
+  			min-height: calc(100vh - 100px);
 		}
 	</style>
 	<body>
 		<div class="content">
 			<nav>
 				<ul><br></br>
-					<li><p>hey, i'm abbey <span role="img" aria-label="wave">👋.</span> it's <span id="current_time"></span> in Paris, and a beautiful <span id="temperature"></span>°F with <span id="description"></span>. This week i'm reading <span id="book-title"></span>, but right now i'm probably <span id="message"></span>.</p></li>
+					<li><p>hey, i'm abbey <span role="img" aria-label="wave">👋.</span> it's <span id="current_time"></span> in Paris, and a beautiful <span id="temperature"></span>°F with <span id="description"></span>. this week i'm reading <span id="book-title"></span>, but right now i'm probably <span id="message"></span>.</p></li>
 					<li><b>previously</b><p>programming at the <a href="https://www.lsst.org/">large synoptic survey telescope</a>, art directing at <a href="https://wearexyz.com">xyz</a>, and organizing data at <a href="https://parrable.com">parrable</a>.</p></li>
 					<li><b>currently</b><p>studying at <a href="">Paris College of Art</a> and designing at <a href="">Printer Scanner</a>.</p></li>
 				</ul>
@@ -56,70 +53,82 @@
 		</ul>
 		<ul>
 			<li><b>resources</b></li>
-			<li><a href="Socialism">Resources on Socialism</a></li>
+			<li><a href="Science">Resources on Science</a></li>
 			<li><a href="Museum">Resources on Operating Systems</a></li>
 			<li><a href="Museum">Great Designers</a></li>
 		</ul>
 	</div>
 	<footer class="footer">
-		<ul><li><b>site updated</b><p>april 5, 2020</p></li>
+		<ul><li><b>site updated</b> july 7, 2021</li>
 	</footer>
 	<script>
+
 	const time = new Date();
+
 	async function fetchData() {
 		// Please don't steal my API key. It's just the weather, you can get your own here:
 		//  https://openweathermap.org/api
 		const res = await fetch(`https://api.openweathermap.org/data/2.5/weather?units=imperial&q=Paris&APPID=a767027338c3e647bc664f0b09493eb2`)
 		.then(res => res.json())
+
+		// pulling temperature and weather conditions from JSON
 		const description = res.weather[0].description
 		const temperature = Math.round(res.main.temp)
 		document.getElementById('description').innerHTML = description;
 		document.getElementById('temperature').innerHTML = temperature;
 	}
+
 	fetchData()
 
 	async function fetchReading() {
 		// Please don't steal my API key. It's just the weather, you can get your own here:
-		//  https://openweathermap.org/api
 		const res = await fetch(`https://www.goodreads.com/review/list/107058193.xml?key=scQ3fGm8Z01VNqDGZ8Zz0Q&v=2?shelf=currently-reading`)
+		// convert xml to text
 		.then(res => res.text())
 
+		// parse the text file to find the book title
 		parser = new DOMParser();
 		xmlDoc = parser.parseFromString(res,"text/xml");
 
 		document.getElementById("book-title").innerHTML =
 		xmlDoc.getElementsByTagName("title")[0].childNodes[0].nodeValue;
-		}
+	}
+
 	fetchReading()
 
 	async function setTime() {
 		const hours = time.getHours();
 		let message = "";
+
+		// Yes, there is definitely a better way to write this
 		if (hours === 23 || hours <= 7) {
-		message = "sleeping"
+			message = "sleeping"
 		}
 		if (hours === 8 || hours === 9) {
-		message = "drinking coffee and reading"
+			message = "drinking coffee and checking my email"
 		}
 		if (hours === 10 || hours === 13 ) {
-		message = "hard at work and online"
+			message = "hard at work and online"
 		}
 		if (hours === 14 || hours === 15 ) {
-		message = "out grabbing a coffee"
+			message = "out grabbing a coffee"
 		}
 		if (hours === 16 || hours === 17) {
-		message = "looking at tiktoks"
+			message = "looking at tiktoks"
 		}
 		if (hours === 18 || hours === 19) {
-		message = "cooking dinner"
+			message = "cooking dinner"
 		}
 		if (hours === 18 || (hours >= 18 && hours < 23)) {
-		message = "out with friends"
+			message = "out with friends"
 		}
-	document.getElementById('message').innerHTML = message;
+		document.getElementById('message').innerHTML = message;
 	}
+
 	setTime()
-	const current_time = new Date().toLocaleTimeString('en-US', { hour12: false, hour: "numeric", minute: "numeric"})
+
+
+	const current_time = new Date().toLocaleTimeString('en-FR', { hour12: false, hour: "numeric", minute: "numeric", timeZone: 'Europe/Paris'})
 	document.getElementById('current_time').innerHTML = current_time;
 
 	</script>
