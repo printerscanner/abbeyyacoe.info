@@ -27,7 +27,7 @@
 		<div class="content">
 			<nav>
 				<ul><br></br>
-					<li><p>Hey, I'm Abbey <span role="img" aria-label="wave">👋.</span> It's <span id="current_time"></span> in Paris, and a beautiful <span id="temperature"></span>°F with <span id="description"></span>. This week I'm reading <span id="book-title"></span>, but right now I'm probably <span id="message"></span>.</p></li>
+					<li><p>Hey, I'm Abbey <span role="img" aria-label="wave">👋.</span> It's <span id="current_time"></span> in Edinburgh, and a beautiful <span id="temperature"></span>°F with <span id="description"></span>. This week I'm reading <span id="book-title"></span>, but right now I'm probably <span id="message"></span>.</p></li>
 					<li><b>recently</b> <p>art directing at <a href="https://wearexyz.com">XYZ</a>, programming at the <a href="https://www.lsst.org/">Large Synoptic Survey Telescope</a>, and studying graphic design at <a href="https://paris.edu">Paris College of Art</a>.</p></li>
 					<li><b>currently</b><p> designing at <a href="https://wesellscanners.net">Printer Scanner</a>, and hacking reusables at <a href="https://reath.id">Reath</a>.</p></li>
 				</ul>
@@ -71,7 +71,7 @@
 	async function fetchData() {
 		// Please don't steal my API key. It's just the weather, you can get your own here:
 		//  https://openweathermap.org/api
-		const res = await fetch(`https://api.openweathermap.org/data/2.5/weather?units=imperial&q=Paris&APPID=a767027338c3e647bc664f0b09493eb2`)
+		const res = await fetch(`https://api.openweathermap.org/data/2.5/weather?units=imperial&q=Edinburgh&APPID=a767027338c3e647bc664f0b09493eb2`)
 		.then(res => res.json())
 
 		// pulling temperature and weather conditions from JSON
@@ -131,7 +131,7 @@
 	setTime()
 
 
-	const current_time = new Date().toLocaleTimeString('en-FR', { hour12: false, hour: "numeric", minute: "numeric", timeZone: 'Europe/Paris'})
+	const current_time = new Date().toLocaleTimeString('en-FR', { hour12: false, hour: "numeric", minute: "numeric", timeZone: 'Europe/London'})
 	document.getElementById('current_time').innerHTML = current_time;
 
 	</script>
