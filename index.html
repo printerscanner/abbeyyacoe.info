@@ -54,6 +54,7 @@
 			<li><a href="https://printer-scanner.notion.site/books-ab205628aed1465dbfe6383dabd76c31">What I'm Reading</a></li>
 			<li><a href="Resources">My Library</a><span> (use <a href="https://superuser.com/questions/655554/download-all-folders-subfolders-and-files-using-wget">wget</a> to grab them all)</span></li>
 			<li><a href="https://printer-scanner.notion.site/resources-7d37914123b74bb2ad9213a641a04645">Design and Programming Resources</a></li>
+			<li><a id="book_link" href="">Bored? Here's something random to read.</a></li>
 		</ul>
 		<ul>
 			<li><b>blog</b></li>
@@ -134,6 +135,13 @@
 
 	const current_time = new Date().toLocaleTimeString('en-FR', { hour12: false, hour: "numeric", minute: "numeric", timeZone: 'Europe/London'})
 	document.getElementById('current_time').innerHTML = current_time;
+
+	function randomInteger(min, max) {
+  		return Math.floor(Math.random() * (max - min + 1)) + min;
+	}
+	const random_integer = randomInteger(0, 66732)
+	const book_link = "https://www.gutenberg.org/cache/epub/"+ random_integer +"/pg"+ random_integer +"-images.html"
+	document.getElementById('book_link').href = book_link;
 
 </script>
 </body>
