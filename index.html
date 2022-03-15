@@ -16,8 +16,8 @@
 		body {
 			font-family: 'Work Sans', monospace;
 			word-break: break-word;
-			/*background-color: #04339E;*/
-			/*color: #FFCF62;*/
+			background-color: #f7f1e9;
+			color: #131313;
 			font-size: large;
 			margin-right: 40px;
 		}
@@ -216,87 +216,6 @@
 	const random_integer = randomInteger(0, 66732)
 	const book_link = "https://www.gutenberg.org/cache/epub/"+ random_integer +"/pg"+ random_integer +"-images.html"
 	document.getElementById('book_link').href = book_link
-
-const colors = {
- primary_color: {
-   background: "#3c3c3c",
-   text: "white"
- },
- secondary_color: {
-   background: "#ffffff",
-   text: "#000000"
- },
- tertiary_color: {
-   background: "#0F0F0F",
-   text: '#F0F0F0'
- },
- fourth_color: {
-   background: "#F17850",
-   text: "#191816"
-
- },
-  fifth_color: {
-   background: "#000000",
-   text: "#FFFFFF"
- },
-  sixth_color: {
-   background: "#FFFFFF",
-   text: "#1501FF"
- },
-  eighth_color: {
-   background: "#F7F1E9",
-   text: '#131313'
- },
- eleventh_color: {
-   background: "#04339E",
-   text: '#FFCF62'
- },
- twelfth_color: {
-   background: "#F5DCD1",
-   text: "#FF0406"
- },
- thirteenth_color: {
-   background: '#002DF2',
-   text: '#E0E0E0'
- },
-  fourteenth_color: {
-   background: '#3542FA',
-   text: '#FDE287'
- },
-  fifteenth_color: {
-   background: '#FEEF02',
-   text: '#0B0A00'
- },
- sixteenth_color: {
-   background: '#FF3500',
-   text: '#0B0A00'
- },
- seventeenth_color: {
-   background: '#bc0000',
-   text: '#FEC501'
- },
- eightteenth_color: {
-   background: '#D3EDE8',
-   text: '#0E00FF'
- },
- nineteenth_color: {
-   background: '#CA8950',
-   text: '#000000'
- },
- twentieth_color: {
-   background: '#7D3B1B',
-   text: '#FFB4B4'
- },
-}
-
-
-const values = Object.values(colors)
-const prop = values[Math.floor(Math.random() * values.length)]
-console.log(prop);
-
-
-document.body.style.backgroundColor = prop.background;
-document.body.style.color = prop.text;
 
 </script>
 </body>
