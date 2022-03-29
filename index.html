@@ -159,8 +159,8 @@
 	fetchData()
 
 	async function fetchReading() {
-		// Please don't steal my API key. It's just the weather, you can get your own here:
-		const res = await fetch(`https://secret-ocean-49799.herokuapp.com/https://www.goodreads.com/review/list/107058193.xml?key=scQ3fGm8Z01VNqDGZ8Zz0Q&v=2?shelf=currently-reading`)
+		// Please don't steal my API key. It's just the goodreads.
+		const res = await fetch(`https://www.goodreads.com/review/list/107058193.xml?key=scQ3fGm8Z01VNqDGZ8Zz0Q&v=2?shelf=currently-reading`)
 		// convert xml to text
 		.then(res => res.text())
 
