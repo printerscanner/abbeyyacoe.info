@@ -20,14 +20,6 @@
 			padding-top: 5px;
 		}
 
-		hr {
-			margin-left: 40px;
-			margin-right: 50px;
-			margin-top: 40px;
-			margin-bottom: 20px;
-			color: inherit;
-		}
-
 		ul {
 			margin-top: 40px;
 		}
@@ -45,12 +37,6 @@
 
 		.column {
   			flex: 50%;
-		}
-
-		.back-button {
-			position: -webkit-sticky;
-			position: sticky;
-			top: 0;
 		}
 
 		@media screen and (max-width: 800px) {
