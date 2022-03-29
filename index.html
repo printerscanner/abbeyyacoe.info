@@ -11,7 +11,7 @@
 	<div class="content" id="content">
 		<nav>
 			<ul><br>
-				<li><p>Hey, I'm Abbey <span role="img" aria-label="wave">👋.</span> It's <span id="current_time"></span> in Edinburgh, and a beautiful <span id="temperature"></span>°F with <span id="description"></span>. This week I'm reading <span id="book-title"></span>, but right now I'm probably <span id="message"></span>.</p></li>
+				<li><p>Hey, I'm Abbey <span role="img" aria-label="wave">👋.</span> It's <span id="current_time"></span> in Edinburgh, and a beautiful <span id="temperature"></span>°F with <span id="description"></span>. Right now I'm probably <span id="message"></span>.</p></li>
 				<br>
 				<li><b>recently</b></li> <li>art directing at <a href="https://wearexyz.com">XYZ</a>, programming at the <a href="https://www.lsst.org/">Large Synoptic Survey Telescope</a>, and studying graphic design at <a href="https://paris.edu">Paris College of Art</a>.</li>
 			</ul>
@@ -74,21 +74,21 @@
 
 	fetchData()
 
-	async function fetchReading() {
-		// Please don't steal my API key. It's just the goodreads.
-		const res = await fetch(`https://www.goodreads.com/review/list/107058193.xml?key=scQ3fGm8Z01VNqDGZ8Zz0Q&v=2?shelf=currently-reading`)
-		// convert xml to text
-		.then(res => res.text())
+	// async function fetchReading() {
+	// 	// Please don't steal my API key. It's just the goodreads.
+	// 	const res = await fetch(`https://www.goodreads.com/review/list/107058193.xml?key=scQ3fGm8Z01VNqDGZ8Zz0Q&v=2?shelf=currently-reading`)
+	// 	// convert xml to text
+	// 	.then(res => res.text())
 
-		// parse the text file to find the book title
-		parser = new DOMParser();
-		xmlDoc = parser.parseFromString(res,"text/xml");
+	// 	// parse the text file to find the book title
+	// 	parser = new DOMParser();
+	// 	xmlDoc = parser.parseFromString(res,"text/xml");
 
-		document.getElementById("book-title").innerHTML =
-		xmlDoc.getElementsByTagName("title")[0].childNodes[0].nodeValue;
-	}
+	// 	document.getElementById("book-title").innerHTML =
+	// 	xmlDoc.getElementsByTagName("title")[0].childNodes[0].nodeValue;
+	// }
 
-	fetchReading();
+	// fetchReading();
 
 
 	async function setTime() {
