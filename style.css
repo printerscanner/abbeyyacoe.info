@@ -31,6 +31,14 @@
 			margin-left: 3%;
 		}
 
+		#update {
+			float: right;
+		}
+
+		section.home {
+			max-width: 100vw;
+		}
+
 		.row {
   			display: flex;
 		}

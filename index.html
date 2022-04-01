@@ -9,14 +9,13 @@
 		<style type="text/css"> a {font-weight: 600;} </style>
 	</head>
 <body>
-	<div class="content" id="content">
-		<nav>
-			<ul><br>
+	<section class="home">
+			<br>
 				<p>Hey, I'm Abbey <span role="img" aria-label="wave">👋.</span> I'm a software developer and graphic designer from San Francisco, California.</p>
 
 				 <p>I started programming in high school through web design courses at <a href="https://freestyleacademy.rocks/">Freestyle Academy</a>. In college, I studied English at <a href="https://www.northeastern.edu/">Northeastern University</a>. Then, I moved back to San Francisco, where I worked as a software development intern at a data identification startup called <a href="https://parrable.com">Parrable</a> and took night school classes in computer science. Then, I worked as an art director at a advertising agency called <a href="https://wearexyz.com">XYZ</a>. After a few years, I moved out to the desert of Tucson, Arizona to work as a software engineer for the Education & Public Outreach team at the <a href="https://www.lsst.org/">Large Synoptic Survey Telescope</a>. Recently, I studied communication design at <a href="https://paris.edu">Paris College of Art</a> in Paris.</p>
 
-				<p>I am currently in Edinburgh, where </span> it's <span id="current_time"></span> and a beautiful <span id="temperature"></span>°F with <span id="description"></span>.  I'm probably <span id="message"></span> if you're trying to reach me right now. You can get in touch at <a href="mailto:abbeyyacoe@gmail.com">abbeyyacoe@gmail.com</a> or find me on <a href="https://github.com/abbeyyacoe">Github</a>.
+				<p>I am currently in Edinburgh, where </span> it's <span id="current_time"></span> and a beautiful <span id="temperature"></span>°F with <span id="description"></span>.  I'm probably <span id="message"></span> if you're trying to reach me right now. You can get in touch at <a href="mailto:abbeyyacoe@gmail.com">abbeyyacoe@gmail.com</a> or find me on <a href="https://github.com/abbeyyacoe">Github</a>.</p>
 
 				<p>In the design world, to offset my computerized existence, I am working on a project called <a href="https://printerscanner.net">printer_scanner</a>. I produce art books and other printed (or scanned) matter. Some projects I am most proud of are <a href="https://printerscanner.net/work/randomized_bible">The Randomized Bible</a>, a Bible with all of the verses printed in random order, <a href="https://printerscanner.net/work/polygons">Polygons</a>, a book that details all convex and star polygons up to 28 edges, <a href="https://printerscanner.net/work/vertues">Of The Vertues Commonly Called The Passions</a>, a work of AI-generated philosophy using Markov Chains, hardback bound by hand, and a pamphlet I wrote on <a href="https://printerscanner.net/work/random_number_generators">pseudorandom number generators</a>. You can find printer_scanner on <a href="https://instagram.com/printer_scanner">Instagram</a>.</p>
 
@@ -28,8 +27,9 @@
 				<p>Here, I’ve made a <a href="library">Library</a> of documents I've collected available. You can use <a href="https://superuser.com/questions/655554/download-all-folders-subfolders-and-files-using-wget">wget</a> to grab them all. I also have a collection of <a href="https://printer-scanner.notion.site/e740a78962ba412cb74fc4bcd620f143?v=88adab5d5b3346b2a33ed33502d5f4b5">design resources</a> I've compiled that I often refer to. If you're looking to get into programming, I have a small group of <a href="https://printer-scanner.notion.site/Programming-Resources-16d706b5feab48d48c03004575222396">programming guides</a> that I’ve found valuable.</p>
 
 				<p>Outside of computing, I've spent the last couple of years working my way through classic literature and political philosophy and have a small blog called <a href="what-im-reading">what I'm reading (*new*)</a>. I also have a <a href="">YouTube channel</a> where I document my world travels. If you've made it through this, you must have a lot of free time. <a id="book_link" href="">Here's something random to read</a>.</p>
-
-		</nav>
+				<br>
+				<p id="update">updated <span id="updated_time"></span></p>
+		</section>
 	<script>
 
 	const time = new Date();
@@ -92,7 +92,14 @@
 	const book_link = "https://www.gutenberg.org/cache/epub/"+ random_integer +"/pg"+ random_integer +"-images.html"
 	document.getElementById('book_link').href = book_link
 
+	async function getGH() {
+        const response = await fetch('https://api.github.com/repos/abbeyyacoe/html');
+        const data = await response.json();
+        const updated_time = data.updated_at.slice(0,10);
+        document.getElementById('updated_time').innerHTML = updated_time;
 
+}
+        getGH()
 
 
 </script>
