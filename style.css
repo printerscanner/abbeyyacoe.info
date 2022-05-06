@@ -12,10 +12,12 @@
 			margin-right: 40px;
 			line-height: 1.4;
 		}
+
 		li {
 			list-style-type: none;
 			text-decoration: none;
 		}
+
 		a {
 			color: inherit;
 			padding-top: 5px;
@@ -32,6 +34,10 @@
 			margin-left: 3%;
 		}
 
+		article {
+			width: 90%;
+		}
+
 		#update {
 			float: right;
 		}
@@ -41,23 +47,25 @@
 		}
 
 		.row {
-  			display: flex;
+			display: flex;
 		}
 
 		.column {
-  			flex: 50%;
+			flex: 50%;
 		}
+
+
 
 		@media screen and (max-width: 800px) {
 			.row {
-  			display: initial;
-		}
+				display: initial;
+			}
+
 			.column {
-  			flex: 100%;
-		}
-		section {
-			max-width: 100vw;
-		}
-		}
+				flex: 100%;
+			}
 
-
+			section {
+				max-width: 100vw;
+			}
+		}
