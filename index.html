@@ -150,7 +150,7 @@
 		document.getElementById('book_link').href = book_link
 
 		async function getGH() {
-			const response = await fetch('https://api.github.com/repos/abbeyyacoe/html');
+			const response = await fetch('https://api.github.com/repos/printerscanner/abbeyyacoe.info');
 			const data = await response.json();
 			const updated_time = data.pushed_at.slice(0, 10);
 			document.getElementById('updated_time').innerHTML = updated_time;
