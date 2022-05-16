@@ -7,12 +7,6 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>abbeyyacoe.info</title>
 	<link rel="stylesheet" type="text/css" href="style.css">
-	<style type="text/css">
-		a {
-			font-weight: 600;
-		}
-
-	</style>
 </head>
 
 <body>
@@ -139,15 +133,13 @@
 			return Math.floor(Math.random() * (max - min + 1)) + min;
 		}
 		const random_integer = randomInteger(0, 66732)
-		const book_link = "https://www.gutenberg.org/cache/epub/" + random_integer + "/pg" + random_integer + "-images.html"
-		document.getElementById('book_link').href = book_link
+
 
 		async function getGH() {
 			const response = await fetch('https://api.github.com/repos/printerscanner/abbeyyacoe.info');
 			const data = await response.json();
 			const updated_time = data.pushed_at.slice(0, 10);
 			document.getElementById('updated_time').innerHTML = updated_time;
-
 		}
 		getGH()
 
