@@ -59,6 +59,7 @@
 		@media screen and (max-width: 800px) {
 			body {
 				margin-right: 10px;
+				margin-left: 0px;
 			}
 			.row {
 				display: initial;
