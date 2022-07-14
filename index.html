@@ -8,11 +8,13 @@
     <link rel="stylesheet" type="text/css" href="style.css">
   </head>
   <body>
-    <section class="home">
+    <section class="home" id="home">
       <p>Hey, I'm Abbey <span role="img" aria-label="wave">👋.</span> I'm a software developer and graphic designer from San Francisco, California. </p>
 
+      <!-- Incognito Mode -->
+      <!-- <p>I started programming in high school through web design courses at <a href="https://freestyleacademy.rocks/">Freestyle Academy</a>. I studied English at <a href="https://www.northeastern.edu/">Northeastern University</a>, then moved back to San Francisco, where I worked as a software development intern at a data identification startup called <a href="https://parrable.com">Parrable</a> and took night school classes in computer science. Then, I worked as an art director at an advertising agency called <a href="https://wearexyz.com">XYZ</a>. After a few years, I moved out to the desert of Tucson, Arizona, to work as a software engineer at the <a href="https://www.lsst.org/">Rubin Observatory</a>. Recently, I studied communication design at <a href="https://paris.edu">Paris College of Art</a> in Paris. </p> -->
 
-      <p>I started programming in high school through web design courses at <a href="https://freestyleacademy.rocks/">Freestyle Academy</a>. I studied English at <a href="https://www.northeastern.edu/">Northeastern University</a>, then moved back to San Francisco, where I worked as a software development intern at a data identification startup called <a href="https://parrable.com">Parrable</a> and took night school classes in computer science. Then, I worked as an art director at an advertising agency called <a href="https://wearexyz.com">XYZ</a>. After a few years, I moved out to the desert of Tucson, Arizona, to work as a software engineer at the <a href="https://www.lsst.org/">Rubin Observatory</a>. Recently, I studied communication design at <a href="https://paris.edu">Paris College of Art</a> in Paris. </p>
+
       <p>Right now, I am in Edinburgh, where </span> it's <span id="current_time"></span> and a beautiful <span id="temperature"></span>°F with <span id="description"></span>. I'm probably <span id="message"></span> if you're trying to reach me. You can get in touch at <a href="mailto:abbeyyacoe@gmail.com">abbeyyacoe@gmail.com</a> or find me on <a href="https://github.com/printerscanner">Github</a>. </p>
 
 
@@ -21,7 +23,7 @@
 
       <p>Other projects I am proud of include <a href="https://github.com/printerscanner/slightly-better-css">Slightly Better CSS</a>, a lightweight (2KB) CSS stylesheet for people with taste, the <a href="https://instagram.com/mondrian_generator">Mondrian Generator</a>, a program that randomly generates Mondrian lookalikes and posts them on Instagram, and my <a href="https://printerscanner.net/archives/collages">Poster Auto-Generator</a>, a program that makes it's own collage posters, with surprisingly beautiful results.</p>
 
-	  <p>Outside of computing, I've spent the last couple of years working my way through the classics. I have a <a href="https://printer-scanner.notion.site/Books-ab205628aed1465dbfe6383dabd76c31">notion page</a> where you can follow what I'm reading. Along the way, I collected a few free pdfs and put them in my <a href="library">Library</a>. You can use <a href="https://superuser.com/questions/655554/download-all-folders-subfolders-and-files-using-wget">wget</a> to grab them all. If you're looking to get into programming, I have a small list of <a href="https://printer-scanner.notion.site/Programming-Resources-16d706b5feab48d48c03004575222396">programming guides</a> that I’ve found valuable. </p>
+	  <p>Outside of computing, I've spent the last couple of years working my way through the classics. I have a <a href="https://printer-scanner.notion.site/Books-ab205628aed1465dbfe6383dabd76c31">Notion</a> page where you can follow what I'm reading. Along the way, I collected a few free pdfs and put them in my <a href="library">Library</a>. You can use <a href="https://superuser.com/questions/655554/download-all-folders-subfolders-and-files-using-wget">wget</a> to grab them all.</p>
 
 
 	<p>I also have a <a href="https://www.youtube.com/channel/UCam9p5fiexMSluubYBs6sNw">YouTube channel</a> where I document my world travels. If you've read all this and are itching to see more, feel free to check out the <a href="https://printerscanner.net/archive">Archive</a>.</p>
@@ -29,6 +31,8 @@
       <p id="update">updated <span id="updated_time"></span>
       </p>
     </section>
+        <script src="https://unpkg.com/bindery/dist/bindery.min.js"></script>
+
     <script>
       const time = new Date();
       async function fetchData() {
@@ -90,6 +94,11 @@
         document.getElementById('updated_time').innerHTML = updated_time;
       }
       getGH()
+
+
+
+
     </script>
+
   </body>
 </html>
