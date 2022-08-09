@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>abbeyyacoe.info</title>
     <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" href="https://use.typekit.net/sfg4cxm.css">
   </head>
   <body>
     <section class="home" id="home">
@@ -25,9 +26,7 @@
 
 
 	<p>I also have a <a href="https://www.youtube.com/channel/UCam9p5fiexMSluubYBs6sNw">YouTube channel</a> where I document my world travels. If you've read all this and are itching to see more, feel free to check out the <a href="https://printerscanner.net/archive">Archive</a>.</p>
-      <br>
-      <p id="update">updated <span id="updated_time"></span>
-      </p>
+
     </section>
         <script src="https://unpkg.com/bindery/dist/bindery.min.js"></script>
 
@@ -85,13 +84,6 @@
         return Math.floor(Math.random() * (max - min + 1)) + min;
       }
       const random_integer = randomInteger(0, 66732)
-      async function getGH() {
-        const response = await fetch('https://api.github.com/repos/printerscanner/abbeyyacoe.info');
-        const data = await response.json();
-        const updated_time = data.pushed_at.slice(0, 10);
-        document.getElementById('updated_time').innerHTML = updated_time;
-      }
-      getGH()
 
 
 

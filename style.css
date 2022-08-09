@@ -2,15 +2,15 @@
 
 
 
-
 		body {
-			font-family: 'Work Sans', monospace;
+			font-family: kepler-std, monospace;
 			word-break: break-word;
-			background-color: #f7f1e9;
-			color: #131313;
+			background-color: #ffffff;
+			color: #253551;
 			font-size: xx-large;
 			margin-right: 40px;
 			line-height: 1.4;
+			font-weight: 300;
 		}
 
 		li {
