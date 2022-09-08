@@ -1,75 +1,76 @@
-		@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;600;700;800&display=swap');
+@font-face {
+	font-family: 'Neue Montreal';
+	src: url("font/PPNeueMontreal-Book.otf") format("opentype");
+}
+
+body {
+	font-family: 'Neue Montreal', monospace;
+	word-break: break-word;
+	color: black;
+	background-color: #FFFFFF;
+	font-size: xx-large;
+	margin-right: 40px;
+	line-height: 1.5;
+	font-weight: 300;
+}
+
+li {
+	list-style-type: none;
+	text-decoration: none;
+}
+
+a {
+	color: inherit;
+	padding-top: 5px;
+}
+
+ul {
+	margin-top: 40px;
+}
+
+section {
+	max-width: 600px;
+	margin-top: 4%;
+	margin-bottom: 5%;
+	margin-left: 2%;
+}
+
+article {
+	width: 90%;
+}
+
+#update {
+	float: right;
+}
+
+section.home {
+	max-width: 100vw;
+}
+
+.row {
+	display: flex;
+}
+
+.column {
+	flex: 50%;
+}
 
 
 
-		body {
-			font-family: kepler-std, monospace;
-			word-break: break-word;
-			background-color: #ffffff;
-			color: #253551;
-			font-size: xx-large;
-			margin-right: 40px;
-			line-height: 1.4;
-			font-weight: 300;
-		}
+@media screen and (max-width: 800px) {
+	body {
+		margin-right: 10px;
+		margin-left: 0px;
+	}
+	.row {
+		display: initial;
+	}
 
-		li {
-			list-style-type: none;
-			text-decoration: none;
-		}
+	.column {
+		flex: 100%;
+	}
 
-		a {
-			color: inherit;
-			padding-top: 5px;
-		}
-
-		ul {
-			margin-top: 40px;
-		}
-
-		section {
-			max-width: 600px;
-			margin-top: 4%;
-			margin-bottom: 5%;
-			margin-left: 2%;
-		}
-
-		article {
-			width: 90%;
-		}
-
-		#update {
-			float: right;
-		}
-
-		section.home {
-			max-width: 100vw;
-		}
-
-		.row {
-			display: flex;
-		}
-
-		.column {
-			flex: 50%;
-		}
-
-
-
-		@media screen and (max-width: 800px) {
-			body {
-				margin-right: 10px;
-				margin-left: 0px;
-			}
-			.row {
-				display: initial;
-			}
-
-			.column {
-				flex: 100%;
-			}
-
-			section {
-				max-width: 100vw;
-			}
-		}
+	section {
+		max-width: 100vw;
+	}
+}
