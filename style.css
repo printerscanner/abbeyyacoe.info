@@ -1,6 +1,6 @@
 @font-face {
 	font-family: 'Neue Montreal';
-	src: url("font/PPNeueMontreal-Book.otf") format("opentype");
+	src: url("fonts/PPNeueMontreal-Regular.woff") format("woff");
 }
 
 body {
@@ -10,7 +10,7 @@ body {
 	background-color: #FFFFFF;
 	font-size: xx-large;
 	margin-right: 40px;
-	line-height: 1.5;
+	line-height: 1.6;
 	font-weight: 300;
 }
 
