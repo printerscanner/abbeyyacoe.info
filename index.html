@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html>
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
@@ -6,10 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>abbey's world</title>
     <link rel="stylesheet" type="text/css" href="style.css">
-    <!-- <link rel="stylesheet" href="https://use.typekit.net/sfg4cxm.css"> -->
   </head>
   <body>
-    <section class="home" id="content">
+
+    <section class="home">
       <p>Hey, I'm Abbey <span role="img" aria-label="wave">👋.</span> I'm a software developer and graphic designer from San Francisco, California. </p>
 
       <p>Right now, I am in Berlin, where </span> it's <span id="current_time"></span> and a beautiful <span id="temperature"></span>°F with <span id="description"></span>. I work as a UX Engineer at <a href="https://fictivekin.com">Fictive Kin</a>, and I'm probably <span id="message"></span> if you're trying to reach me. You can get in touch at <a href="mailto:abbeyyacoe@gmail.com">abbeyyacoe@gmail.com</a> or find me on <a href="https://github.com/printerscanner">Github</a>.</p>
@@ -18,70 +17,73 @@
 
       <p>In the design world, I am known by the alias <a href="https://printerscanner.net">printer_scanner</a>, and I design, print and bind art books and other printed (or scanned) matter. Some projects I am most proud of are <a href="https://printerscanner.net/work/polygons">Polygons</a>, a book that illustrates all convex and star polygons up to 28 edges, <a href="https://printerscanner.net/work/april">April</a>, a borderless photo book dedicated to spring, and a pamphlet I wrote on <a href="https://printerscanner.net/work/random_number_generators">pseudorandom number generators</a>. You can find printer_scanner on <a href="https://instagram.com/printer_scanner">Instagram</a>.</p>
 
-
       <p>Other projects I am proud of include the <a href="https://instagram.com/mondrian_generator">Mondrian Generator</a>, a program that randomly generates Mondrian lookalikes and posts them on Instagram, <a href="https://github.com/printerscanner/slightly-better-css">Slightly Better CSS</a>, a lightweight (2KB) CSS stylesheet for people with taste, and my <a href="https://printerscanner.net/collage">Collage Auto-Generator</a>, a program that makes it's own collage posters, with surprisingly beautiful results.</p>
 
-	  <p>Outside of computing, I've spent the last couple of years working through the classics. I have a <a href="https://boringbooks.org">blog</a> where you can follow what I'm reading. Along the way, I collected a few free pdfs and put them in my <a href="library">Library</a>. You can use <a href="https://superuser.com/questions/655554/download-all-folders-subfolders-and-files-using-wget">wget</a> to grab them all. I also have a <a href="https://www.youtube.com/channel/UCam9p5fiexMSluubYBs6sNw">YouTube channel</a> where I document my world travels.</p>
+	    <p>Outside of computing, I've spent the last couple of years working through the classics. I have a <a href="https://boringbooks.org">blog</a> where you can follow what I'm reading. Along the way, I collected a few free pdfs and put them in my <a href="library">Library</a>. You can use <a href="https://superuser.com/questions/655554/download-all-folders-subfolders-and-files-using-wget">wget</a> to grab them all. I also have a <a href="https://www.youtube.com/channel/UCam9p5fiexMSluubYBs6sNw">YouTube channel</a> where I document my world travels.</p>
 
     </section>
 
     <script>
+
+      // time
       const time = new Date();
+
+      const current_time = time.toLocaleTimeString('en-US', {
+        hour: '2-digit',
+        minute: '2-digit',
+        timeZone: 'Europe/Berlin'
+      })
+
+      document.getElementById('current_time').innerHTML = current_time;
+
       async function fetchData() {
         // Please don't steal my API key. It's just the weather, you can get your own here:
         //  https://openweathermap.org/api
         const res = await fetch(`https://api.openweathermap.org/data/2.5/weather?units=imperial&q=Berlin&APPID=a767027338c3e647bc664f0b09493eb2`).then(res => res.json())
-        // pulling temperature and weather conditions from JSON
+
         const description = res.weather[0].description
         const temperature = Math.round(res.main.temp)
         document.getElementById('description').innerHTML = description;
         document.getElementById('temperature').innerHTML = temperature;
       }
-      fetchData()
 
       async function setTime() {
-        const hours = time.getHours();
+        const hours = time.toLocaleTimeString('en-EU', {
+          hour: '2-digit',
+          hour12: false,
+          timeZone: 'Europe/Berlin'
+        });
         let message = "";
 
-		if (hours === 23 || hours <= 7) {
+        if (hours === 23 || hours <= 7) {
           message = "sleeping"
         }
         if (hours === 8) {
           message = "drinking coffee and reading"
         }
-        if (hours >= 9 && hours < 14) {
+        if (hours >= 9 && hours < 10 ) {
+          message = "out on a run"
+        }
+        if (hours >= 10 && hours < 14) {
           message = "online and available by email"
         }
         if (hours === 14 || hours === 15) {
           message = "out grabbing a coffee"
         }
-        if (hours === 16) {
+        if (hours >=16 && hours < 18 ) {
           message = "online and available by email"
         }
-        if (hours === 17 || hours === 19) {
+        if (hours === 18 || hours === 19) {
           message = "cooking dinner"
         }
-        if (hours === 18 || (hours >= 18 && hours < 23)) {
+        if (hours >= 19 && hours < 23) {
           message = "out with friends"
         }
         document.getElementById('message').innerHTML = message;
       }
+
+      fetchData()
       setTime()
-      // time
-      const current_time = new Date().toLocaleTimeString('en-US', {
-        hour: '2-digit',
-        minute: '2-digit',
-        timeZone: 'Europe/Berlin'
-      })
-      document.getElementById('current_time').innerHTML = current_time;
-
-      function randomInteger(min, max) {
-        return Math.floor(Math.random() * (max - min + 1)) + min;
-      }
-      const random_integer = randomInteger(0, 66732)
-
-
-
 
     </script>
   </body>
