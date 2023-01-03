@@ -51,7 +51,7 @@
         document.getElementById('temperature').innerHTML = temperature;
       }
 
-      async function setTime() {
+      async function setTime(time) {
         const hours = time.toLocaleTimeString('en-EU', {
           hour: '2-digit',
           hour12: false,
@@ -87,7 +87,7 @@
       }
 
       fetchData()
-      setTime()
+      setTime(time)
 
     </script>
   </body>
