@@ -4,11 +4,25 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>abbey's world</title>
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" href="https://printerscanner.github.io/slightly-better-css/slightly-better.css">
+		<style>
+			@font-face {
+				font-family: 'Neue Montreal';
+				src: url("fonts/PPNeueMontreal-Regular.woff") format("woff");
+			}
+
+			:root {
+				--background-color: #c3c7cf;
+				--text-color: #000000;
+				--accent-color: red;
+				--muted-color: #f6f6f6;
+				--font-family: 'Neue Montreal', monospace;
+				--font-size: xx-large;
+			}
+
+		</style>
   </head>
   <body>
-
-    <section class="home">
       <p>Hey, I'm Abbey <span role="img" aria-label="wave">👋.</span> I'm a software developer and graphic designer from San Francisco, California. </p>
 
       <p>Right now, I am in Berlin, where </span> it's <span id="current_time"></span> and a beautiful <span id="temperature"></span>°F with <span id="description"></span>. I work as a UX Engineer at <a href="https://fictivekin.com">Fictive Kin</a>, and I'm probably <span id="message"></span> if you're trying to reach me. You can get in touch at <a href="mailto:abbeyyacoe@gmail.com">abbeyyacoe@gmail.com</a> or find me on <a href="https://github.com/printerscanner">Github</a>.</p>
@@ -24,9 +38,6 @@
       <p>Other projects I am proud of include the <a href="https://instagram.com/mondrian_generator">Mondrian Generator</a>, a program that randomly generates Mondrian lookalikes and posts them on Instagram, <a href="https://github.com/printerscanner/slightly-better-css">Slightly Better CSS</a>, a lightweight (2KB) CSS stylesheet for people with taste, and my <a href="https://printerscanner.net/collage">Collage Auto-Generator</a>, a program that makes it's own collage posters, with surprisingly beautiful results.</p>
 
 	    <p>Outside of computing, I've spent the last couple of years working through the classics. I have a <a href="https://boringbooks.org">blog</a> where you can follow what I'm reading. Along the way, I collected a few free pdfs and put them in my <a href="library">Library</a>. You can use <a href="https://superuser.com/questions/655554/download-all-folders-subfolders-and-files-using-wget">wget</a> to grab them all. I also have a <a href="https://www.youtube.com/channel/UCam9p5fiexMSluubYBs6sNw">YouTube channel</a> where I document my world travels.</p>
-
-    </section>
-
     <script>
 
       // time
