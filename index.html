@@ -32,7 +32,7 @@
   <body>
       <p>Hey, I'm Abbey <span role="img" aria-label="wave">👋.</span> I'm a software developer and graphic designer from San Francisco, California. </p>
 
-      <p>Currently, I'm in California, where </span> it's <span id="current_time"></span> and a beautiful <span id="temperature"></span>°F with <span id="description"></span>. I'm probably <span id="message"></span> if you're trying to reach me. You can get in touch at <a href="mailto:abbeyyacoe@gmail.com">abbeyyacoe@gmail.com</a>.</p>
+      <p>Currently, I'm in Berlin, where </span> it's <span id="current_time"></span> and a beautiful <span id="temperature"></span>°F with <span id="description"></span>. I'm probably <span id="message"></span> if you're trying to reach me. You can get in touch at <a href="mailto:abbeyyacoe@gmail.com">abbeyyacoe@gmail.com</a>.</p>
 
 
       <p>I work as a UX Engineer at <a href="https://fictivekin.com">Fictive Kin</a>, a design and engineering studio based in Brooklyn. I also operate <a href="https://printerscanner.net">printer_scanner</a>, where I experiment with design. You can find printer_scanner on <a href="https://instagram.com/printer_scanner">Instagram</a> and <a href="https://github.com/printerscanner">Github</a>.</p>
@@ -48,7 +48,7 @@
       const current_time = time.toLocaleTimeString('en-US', {
         hour: '2-digit',
         minute: '2-digit',
-        timeZone: 'America/Los_Angeles'
+        timeZone: 'Europe/Amsterdam'
       })
 
       document.getElementById('current_time').innerHTML = current_time;
@@ -56,7 +56,7 @@
       async function fetchData() {
         // Please don't steal my API key. It's just the weather, you can get your own here:
         //  https://openweathermap.org/api
-        const res = await fetch(`https://api.openweathermap.org/data/2.5/weather?units=imperial&q=Palo+Alto&APPID=a767027338c3e647bc664f0b09493eb2`).then(res => res.json())
+        const res = await fetch(`https://api.openweathermap.org/data/2.5/weather?units=imperial&q=Berlin&APPID=a767027338c3e647bc664f0b09493eb2`).then(res => res.json())
 
         const description = res.weather[0].description
         const temperature = Math.round(res.main.temp)
