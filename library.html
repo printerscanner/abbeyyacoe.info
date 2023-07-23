@@ -19,12 +19,6 @@
 		--font-size: 200%;
 	}
 
-	@media only screen and (max-width: 600px) {
-	:root {
-	--font-size: 175%;
-	}
-	}
-
 	a {
 		color: var(--accent-color);
 		/* transition: all .2s; */
@@ -46,6 +40,14 @@
 		gap: 100px;
 	}
 
+	@media only screen and (max-width: 600px) {
+		:root {
+		--font-size: 175%;
+		}
+		ul {
+			columns: 1;
+		}
+	}
 
 
 
